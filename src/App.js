@@ -27,6 +27,7 @@ function App() {
     const actionHandler = async () => {
         if (!Web3.utils.isAddress(account))
             return alert("Not a valid address!");
+        if (tokenChosen === "") return alert("Select Token!");
         let contract = new ethers.Contract(
             tokenList[tokenChosen].address,
             ERC20_abi,
@@ -74,7 +75,7 @@ function App() {
                     <div className='search-approvals'>
                         <div className=''>
                             <p id='title'>
-                                Who did I approve for? <span> v0.0.1</span>
+                                Who is approved? <span> v0.0.1</span>
                             </p>
                         </div>
 
